@@ -1,35 +1,30 @@
 import React from "react";
 import { useState } from "react";
-import { Task } from "../Task";
+import { List } from "../List";
+import { Form } from "../Form";
+import { Item } from "../Item";
 import './style.css'
 
 export function Todo(){
-    const [text, setText] = useState("")
     const [items, setItems] = useState([])
 
-    function handleText(event){
-        setText(event.target.value)
+    function onAddItem(text){
+        let it = new Item(text)
+
+        setItems([...items, it])
     }
 
-    function addTask(event){
-        event.preventDefault()
-        if(text){
-            setItems([...items, text])
-            setText("")
-        }
+    function onDeleteTask(item){
+        let filteredItems = items.filter(it => it.id != item.id)
+
+        setItems(filteredItems)
     }
 
     return (
         <div className="container">
             <h1>Todo List</h1>
-            <form action="">
-                <input onChange={handleText} type="text" value={text}/>
-                <button onClick={addTask}>Add</button>
-            </form>
-
-            <ul>
-                {items.map(item => <Task value={item} />)}
-            </ul>
+            <Form onAddItem={onAddItem}/>
+            <List onDeleteTask={onDeleteTask} items={items}/>
         </div>
     )
 }
