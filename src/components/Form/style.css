@@ -1,0 +1,28 @@
+.container form input{
+    height: 35px;
+    width: 70%;
+
+    border-radius: 20px;
+
+    border: 2px solid #160C28;
+
+    padding: 5px;
+}
+
+.container form button{
+    padding: 10px 30px;
+
+    margin-left: 1rem;
+
+    font-size: 1.2rem;
+
+    background-color: #160C28;
+
+    color: white ;
+
+    border: none;
+    
+    border-radius: 30px;
+
+    cursor: pointer;
+}
