@@ -20,11 +20,23 @@ export function Todo(){
         setItems(filteredItems)
     }
 
+    function onDoneTask(item){
+        let updatedItems = items.map(it => {
+            if(it.id == item.id){
+                it.done = !it.done
+            }
+
+            return it
+        })
+
+        setItems(updatedItems)
+    }
+
     return (
         <div className="container">
             <h1>Todo List</h1>
             <Form onAddItem={onAddItem}/>
-            <List onDeleteTask={onDeleteTask} items={items}/>
+            <List onDeleteTask={onDeleteTask} onDoneTask={onDoneTask} items={items}/>
         </div>
     )
 }
