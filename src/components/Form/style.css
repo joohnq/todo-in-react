@@ -1,4 +1,38 @@
-.container form input{
+.container form{
+    background-color: white;
+
+    max-width: 700px;
+    height: 200px;
+
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+.container form > div{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: -20px;
+}
+
+.container form label{
+    text-align: start;
+
+    margin-left: 70px;
+}
+
+.container input{
     height: 35px;
     width: 70%;
 
@@ -6,10 +40,10 @@
 
     border: 2px solid #160C28;
 
-    padding: 5px;
+    padding: 20px;
 }
 
-.container form button{
+.container button{
     padding: 10px 30px;
 
     margin-left: 1rem;

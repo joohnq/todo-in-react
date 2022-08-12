@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import { List } from "../List";
 import { Form } from "../Form";
 import { Item } from "../Item";
+import { Modal } from "../Modal";
 import './style.css'
 
 export function Todo(){
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        let savedItems = JSON.parse(localStorage.getItem("savedItems"))
-        console.log(savedItems)
+        let savedItems = JSON.parse(localStorage.getItem("taskOnLS"))
         if(savedItems){
             setItems(savedItems)
         }
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("savedItems", JSON.stringify(items))
+        localStorage.setItem("taskOnLS", JSON.stringify(items))
     },[items])
 
     function onAddItem(text){
@@ -46,8 +46,10 @@ export function Todo(){
     return (
         <div className="container">
             <h1>Todo List</h1>
-            <Form onAddItem={onAddItem}/>
-            <List onDeleteTask={onDeleteTask} onDoneTask={onDoneTask} items={items}/>
+            {/* <Form onAddItem={onAddItem}/> */}
+            <List onDeleteTask={onDeleteTask} onDoneTask={onDoneTask} 
+            items={items}/>
+            <Modal />
         </div>
     )
 }
