@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "../Card";
 import "./style.css";
 
 export function Task(props) {
@@ -11,18 +12,22 @@ export function Task(props) {
   }
 
   return (
-    <li className={props.item.done ? "done" : ""} key={props.item.id}>
-      <button onClick={() => {
+    <li key={props.item.id}>
+      <button
+        onClick={() => {
           props.onDoneTask(props.item);
-        }}> 
+        }}
+      >
         <DoneImg done={props.item.done}></DoneImg>
       </button>
 
       {props.item.text}
 
-      <button onClick={() => {
+      <button
+        onClick={() => {
           props.onDeleteTask(props.item);
-        }}>
+        }}
+      >
         <img alt="Delete" src="./trash.svg"></img>
       </button>
     </li>
