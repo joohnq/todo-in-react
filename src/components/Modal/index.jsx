@@ -4,7 +4,7 @@ import './style.css'
 
 export function Modal(){
     return (
-        <div className="modal">
+        <div className="modal disabled">
             <Form />
         </div>
     )

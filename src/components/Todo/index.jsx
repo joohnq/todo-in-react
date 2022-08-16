@@ -3,6 +3,7 @@ import { List } from "../List";
 import { Form } from "../Form";
 import { Item } from "../Item";
 import { Modal } from "../Modal";
+import { BtnCreate } from "../BtnCreate";
 import './style.css'
 
 export function Todo(){
@@ -47,6 +48,7 @@ export function Todo(){
         <div className="container">
             <h1>Todo List</h1>
             {/* <Form onAddItem={onAddItem}/> */}
+            <BtnCreate />
             <List onDeleteTask={onDeleteTask} onDoneTask={onDoneTask} 
             items={items}/>
             <Modal />
