@@ -47,7 +47,7 @@ export function Todo(){
     return (
         <div className="container">
             <h1>Todo List</h1>
-            {/* <Form onAddItem={onAddItem}/> */}
+            <Form onAddItem={onAddItem}/>
             <BtnCreate />
             <List onDeleteTask={onDeleteTask} onDoneTask={onDoneTask} 
             items={items}/>
